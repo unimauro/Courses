@@ -4,7 +4,11 @@ using UnityEngine;
 
 public class Patrol : MonoBehaviour
 {
+	[Tooltip ("Unidade de Distancia")]
+	//[Range (10,40)]
 	public int distance;
+	[Tooltip ("Velocidad del objeto")]
+	//[Min (4)]
 	public float speed;
 	private Vector3 startPos, endPos, targetPos;
 
