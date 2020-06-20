@@ -26,7 +26,8 @@ public class Patrol : MonoBehaviour
 		{
 			targetPos=startPos;
 		}
-		transform.position = Vector3.MoveTowards (transform.position, targetPos, speed * Time.deltaTime);
+		transform.position = Vector3.MoveTowards (transform.position, 
+		targetPos, speed * Time.deltaTime);
 	}
 
 
