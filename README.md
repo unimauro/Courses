@@ -14,3 +14,4 @@ My Focus is finish the following books:
 # Rust me 
 # AI Kids.
 # Peru 4.0 ?
+# Pandemia
