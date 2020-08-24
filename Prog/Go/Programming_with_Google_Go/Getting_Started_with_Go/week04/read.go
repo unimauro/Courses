@@ -1,3 +1,4 @@
+
 package main
 
 import (
@@ -5,49 +6,38 @@ import (
     "bufio"
     "os"
     "strings"
-    "io"
 )
-type Name struct {
-	fname string
-	lname string 
+
+type name struct {
+    fname string
+    lname string
 }
-func main() {
-    path:=""
-    fmt.Println("Please input file full Path(Such as D:\\name.txt):")
-    fmt.Scanln(&path)
-    var name[] Name
-    f, err := os.Open(path)
+
+func main(){
+    fmt.Println("Please before create a file (names.txt)  with a Name and a Lastname separed by a spice \n like: \n Marco Parra \n Hugo Baila \n ")
+    read_input := bufio.NewScanner(os.Stdin)
+    fmt.Printf("\nPlease filename containing a list: ")
+    read_input.Scan()
+    file_name := read_input.Text()
+    
+    file, err := os.Open(file_name)
     if err != nil {
-        panic(err)
+        fmt.Println("\nFile could not be opened. Please")
+        fmt.Println("correct filename and path before running again.")
     }
-    defer f.Close()
 
-    rd := bufio.NewReader(f)
-    for {
-        line, _, err:= rd.ReadLine()
-        
-        if err != nil || io.EOF == err {
-            break
-        }       
-            tname:=strings.Split(string(line)," ")
-            tpname:= Name {
-                fixLongName(tname[0]),
-                fixLongName(tname[1]),
-            } 
-            name=append(name,tpname)
-            }  
-    for i:=0;i<len(name);i++{
-        fmt.Println(i+1)
-        fmt.Println("First Name:"+name[i].fname)
-        fmt.Println("Last Name:"+name[i].lname)
+    name_slice := make([]name, 0)
+    scanner := bufio.NewScanner(file)
+    for scanner.Scan() {
+        name_strings := strings.Fields(scanner.Text())
+        p := name{fname: name_strings[0], lname: name_strings[1]}
+        name_slice = append(name_slice, p)
     }
-}
-// Cut the string if the name is too long
-func fixLongName(buffer string) string {
 
-    if len(buffer)>20 {
-       return string(buffer[0:20])
-    } else {
-       return buffer 
+    fmt.Println("\nHere are your list of names from", file_name)
+ 
+    for i:=0; i<len(name_slice); i++{
+        fmt.Println(name_slice[i].fname, name_slice[i].lname)
     }
+
 }

@@ -8,19 +8,14 @@ import(
 
 func main(){
 	var s string 
-	fmt.Println("Please write la variable:")
+	fmt.Println("Please write the variable:")
 	fmt.Scanf("%s", &s)
 
-	if strings.Contains(s,"i"){		
-		fmt.Println("Found! \n")
-	} else if strings.Contains(s,"a"){
-                fmt.Println("Found! \n")
-	} else if strings.Contains(s,"n"){       
-                fmt.Println("Found! \n")
-        } else{
-                fmt.Println("Not Found! \n")
-        }
-
+	if strings.Contains(s,"a") && (s[0]=='i' || s[0]=='I') && (s[len(s)-1]=='n') || s[len(s)-1]=='N' {
+		fmt.Print("Found!")
+	}else{
+		fmt.Print("Not Found!")
+	}
 
 }
 
