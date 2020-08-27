@@ -27,4 +27,14 @@ t@cookbook:~/puppet/manifests$ cat /tmp/hello
 t@cookbook ~$ puppet apply puppet-lint.pp Notice: Compiled catalog
 t@cookbook ~$ gem list puppet-lint *** LOCAL GEMS *** puppet-lint
 
+t@cookbook ~$ puppet-lint puppet-lint.pp
 
+t@cookbook ~$ puppet-lint puppet-lint.pp
+
+t@cookbook ~$ puppet-lint --no-80chars-check
+
+t@cookbook:~$ mkdir -p .puppet/modules
+
+t@cookbook:~$ cd .puppet/modules
+
+t@cookbook:~/.puppet/modules$ puppet module generate thomas-memcached
