@@ -38,3 +38,7 @@ t@cookbook:~$ mkdir -p .puppet/modules
 t@cookbook:~$ cd .puppet/modules
 
 t@cookbook:~/.puppet/modules$ puppet module generate thomas-memcached
+
+t@cookbook:~/.puppet/modules$ ln –s thomas-memcached memcached
+
+
