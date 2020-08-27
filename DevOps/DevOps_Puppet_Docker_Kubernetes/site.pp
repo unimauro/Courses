@@ -1,5 +1,5 @@
 node default {
-package { 'httpd':
-ensure => 'installed'
+file { '/tmp/hello':
+content => "Hello, world!\n",
 }
 }
