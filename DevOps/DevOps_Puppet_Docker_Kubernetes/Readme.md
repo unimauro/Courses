@@ -21,4 +21,10 @@ content => "Hello, world!\n",
 }
 ______________________
 
+t@cookbook:~/.puppet/manifests$ puppet apply site.pp
+t@cookbook:~/puppet/manifests$ cat /tmp/hello
+
+t@cookbook ~$ puppet apply puppet-lint.pp Notice: Compiled catalog
+t@cookbook ~$ gem list puppet-lint *** LOCAL GEMS *** puppet-lint
+
 
