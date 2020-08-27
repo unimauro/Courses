@@ -1,0 +1,4 @@
+$facter uptime
+
+$uptime
+
