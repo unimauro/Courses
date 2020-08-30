@@ -30,3 +30,11 @@ def can_subtract_money_values():
 def adding_different_currencies_fails():
     with pytest.raises(ValueError):
 
+Money('usd', 10) + Money('gbp', 10)
+
+def can_multiply_money_by_a_number():
+    assert fiver * 5 == Money('gbp', 25)
+
+def multiplying_two_money_values_is_an_error():
+    with pytest.raises(TypeError):
+        tenner * fiver
