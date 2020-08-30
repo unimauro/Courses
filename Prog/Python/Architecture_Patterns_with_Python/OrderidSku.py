@@ -38,3 +38,6 @@ def can_multiply_money_by_a_number():
 def multiplying_two_money_values_is_an_error():
     with pytest.raises(TypeError):
         tenner * fiver
+
+def test_name_equality():
+    assert Name("Harry", "Percival") != Name("Barry", "Percival")        
