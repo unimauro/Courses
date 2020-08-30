@@ -4,6 +4,13 @@ class OrderLine:
     sku: str
     qty: int
 
+def __eq__(self, other):
+        if not isinstance(other, Batch):
+            return False
+        return other.reference == self.reference
+
+    def __hash__(self):
+        return hash(self.reference)
 
 class Batch:
     def __init__(
