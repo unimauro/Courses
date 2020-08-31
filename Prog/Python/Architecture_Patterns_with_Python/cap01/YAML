@@ -1,0 +1,8 @@
+Order_reference: 12345
+Lines:
+  - sku: RED-CHAIR
+    qty: 25
+  - sku: BLU-CHAIR
+    qty: 25
+  - sku: GRN-CHAIR
+    qty: 25
