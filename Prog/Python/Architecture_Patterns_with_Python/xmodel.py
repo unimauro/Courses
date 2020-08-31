@@ -23,3 +23,15 @@ class Batch:
 
     with pytest.raises(OutOfStock, match='SMALL-FORK'):
         allocate(OrderLine('order2', 'SMALL-FORK', 1), [batch])
+
+class OutOfStock(Exception):
+    pass
+
+def allocate(line: OrderLine, batches: List[Batch]) -> str:
+    try:
+        batch = next(
+        ...
+    except StopIteration:
+        raise OutOfStock(f'Out of stock for sku {line.sku}')
+
+
