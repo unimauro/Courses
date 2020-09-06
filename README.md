@@ -23,5 +23,3 @@ My Focus is finish the following books:
 # Pandemia
 
 # AHORA
-
-okok
