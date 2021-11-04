@@ -1,0 +1,3 @@
+docker run --name=CursoGo -it -d -v C:\Users\ACER\Documents\Personal\Courses\Golang\Platzi\curso_golang_platzi:/usr/src/myapp golang bash
+
+docker exec -i -t 6815c69a1ca1 /bin/bash 
